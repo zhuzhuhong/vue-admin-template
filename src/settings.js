@@ -1,6 +1,6 @@
 module.exports = {
 
-  title: 'Vue Admin Template',
+  title: '科泰在线教员后台管理系统',
 
   /**
    * @type {boolean} true | false

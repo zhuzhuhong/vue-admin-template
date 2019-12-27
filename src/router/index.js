@@ -55,6 +55,45 @@ export const constantRoutes = [
     }]
   },
 
+  // 讲师列表
+  {
+    path: '/edu/teacher',
+    component: Layout,
+    redirect: 'edu/teacher/list',
+    name: 'teacher',
+    meta: {
+      title: '讲师管理',
+      icon: 'peoples'
+    },
+    children: [{
+      path: 'list',
+      name: 'eduTeacherList',
+      component: () => import('@/views/edu/teacher/index'),
+      meta: {
+        title: '讲师列表'
+      }
+    },
+    {
+      path: 'create',
+      name: 'eduTeacherCreate',
+      component: () => import('@/views/edu/teacher/editteacher'),
+      meta: {
+        title: '添加讲师'
+      }
+    },
+    {
+      path: 'edit/:id',
+      name: 'EduTeacherEdit',
+      component: () => import('@/views/edu/teacher/editteacher'),
+      meta: {
+        title: '编辑讲师',
+        noCache: true
+      },
+      hidden: true
+    }
+    ]
+  },
+
   {
     path: '/example',
     component: Layout,
